@@ -20,7 +20,7 @@ const [precautionText, setPrecautionText] = useState("");
   const fetchMessages = async () => {
     try {
       const res = await fetch(
-        `${API_URL}/api/chat/${appointmentId}`
+        `https://med-qujl.onrender.com/api/chat/${appointmentId}`
       );
 
       const data = await res.json();
@@ -33,7 +33,7 @@ const [precautionText, setPrecautionText] = useState("");
  const sendPrecaution = async () => {
   try {
     const res = await fetch(
-      '${API_URL}/api/prescriptions',
+      'https://med-qujl.onrender.com/api/prescriptions',
       {
         method: "POST",
         headers: {
@@ -82,7 +82,7 @@ const [precautionText, setPrecautionText] = useState("");
 
     try {
       await fetch(
-        '${API_URL}/api/chat',
+        'https://med-qujl.onrender.com/api/chat',
         {
           method: "POST",
           headers: {
