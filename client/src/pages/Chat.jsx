@@ -80,8 +80,8 @@ const [precautionText, setPrecautionText] = useState("");
     if (!message.trim()) return;
 
     try {
-      await fetch(
-        'https://med-qujl.onrender.com/api/chat',
+      await 
+        fetch(`${API_URL}/api/chat/${appointmentId}`,
         {
           method: "POST",
           headers: {
