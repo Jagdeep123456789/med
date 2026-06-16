@@ -1,4 +1,8 @@
-const API_URL = "http://localhost:5000/api"; 
+import axios from "axios";
+
+export default axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+});
 // change this later to your deployed backend URL
 
 // ----------------------
