@@ -77,37 +77,36 @@ const [precautionText, setPrecautionText] = useState("");
   }, [messages]);
 
   const sendMessage = async () => {
-    if (!message.trim()) return;
+  if (!message.trim()) return;
 
-    try {
-      await 
-        fetch(`${API_URL}/api/chat/${appointmentId}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            appointment_id: appointmentId,
-            senderRole: isDoctor
-              ? "doctor"
-              : "patient",
-            senderName:
-              user?.email || "Unknown",
-            message,
-             is_prescription: false,
-          }),
-        }
-      );
+  try {
+    await fetch(
+      `${API_URL}/api/chat`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          appointment_id: appointmentId,
+          senderRole: isDoctor
+            ? "doctor"
+            : "patient",
+          senderName:
+            user?.email || "Unknown",
+          message,
+          is_prescription: false,
+        }),
+      }
+    );
 
-      setMessage("");
+    setMessage("");
 
-      fetchMessages();
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
+    fetchMessages();
+  } catch (err) {
+    console.log(err);
+  }
+};
   return (
     <div
       style={{
