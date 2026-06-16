@@ -1,0 +1,254 @@
+/* Page Container */
+
+.page {
+max-width: 1200px;
+margin: auto;
+padding: 25px;
+}
+
+/* Cards */
+
+.card {
+background: white;
+border-radius: 18px;
+box-shadow: var(--shadow-sm);
+border: 1px solid var(--border);
+transition: all .3s ease;
+}
+
+.card:hover {
+transform: translateY(-3px);
+box-shadow: var(--shadow-md);
+}
+
+/* Buttons */
+
+.btn-primary {
+background: var(--primary);
+color: white;
+border: none;
+padding: 12px 18px;
+border-radius: 30px;
+font-weight: 600;
+}
+
+.btn-primary:hover {
+background: var(--primary-dark);
+}
+
+.btn-secondary {
+background: white;
+border: 1px solid var(--border);
+padding: 12px 18px;
+border-radius: 30px;
+}
+
+/* Navbar */
+
+.navbar {
+position: sticky;
+top: 0;
+z-index: 100;
+background: white;
+border-bottom: 1px solid var(--border);
+box-shadow: var(--shadow-sm);
+}
+
+.navbar-container {
+max-width: 1200px;
+margin: auto;
+padding: 15px 25px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-links {
+display: flex;
+gap: 12px;
+}
+
+.nav-link {
+padding: 8px 14px;
+border-radius: 20px;
+transition: .3s;
+}
+
+.nav-link:hover {
+background: #eff6ff;
+}
+
+.nav-active {
+background: var(--primary);
+color: white;
+}
+
+/* Dashboard */
+
+.dashboard-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+gap: 20px;
+}
+
+.stat-card {
+background: white;
+padding: 20px;
+border-radius: 18px;
+box-shadow: var(--shadow-sm);
+}
+
+.stat-number {
+font-size: 32px;
+font-weight: bold;
+color: var(--primary);
+}
+
+/* Doctor Cards */
+
+.doctor-grid {
+display: grid;
+gap: 20px;
+}
+
+.doctor-card {
+display: flex;
+background: white;
+border-radius: 18px;
+overflow: hidden;
+box-shadow: var(--shadow-sm);
+transition: .3s;
+}
+
+.doctor-card:hover {
+transform: translateY(-4px);
+box-shadow: var(--shadow-md);
+}
+
+.doctor-image {
+width: 220px;
+object-fit: cover;
+}
+
+.doctor-content {
+flex: 1;
+padding: 20px;
+}
+
+.specialty {
+background: #eff6ff;
+color: var(--primary);
+padding: 5px 12px;
+border-radius: 20px;
+display: inline-block;
+font-size: 12px;
+margin-top: 8px;
+}
+
+/* Forms */
+
+.form-group {
+margin-bottom: 16px;
+}
+
+.form-control {
+width: 100%;
+padding: 12px;
+border-radius: 12px;
+border: 1px solid var(--border);
+}
+
+.form-control:focus {
+border-color: var(--primary);
+}
+
+/* Appointment Cards */
+
+.appointment-card {
+background: white;
+border-radius: 16px;
+padding: 18px;
+border: 1px solid var(--border);
+margin-bottom: 12px;
+}
+
+.status-confirmed {
+background: #dbeafe;
+color: #1d4ed8;
+padding: 5px 10px;
+border-radius: 20px;
+}
+
+.status-completed {
+background: #dcfce7;
+color: #15803d;
+padding: 5px 10px;
+border-radius: 20px;
+}
+
+/* Chat */
+
+.chat-container {
+background: white;
+border-radius: 20px;
+height: 650px;
+display: flex;
+flex-direction: column;
+overflow: hidden;
+box-shadow: var(--shadow-md);
+}
+
+.chat-messages {
+flex: 1;
+overflow-y: auto;
+padding: 20px;
+}
+
+.message-left {
+background: #f1f5f9;
+padding: 12px;
+border-radius: 16px;
+max-width: 75%;
+margin-bottom: 10px;
+}
+
+.message-right {
+background: var(--primary);
+color: white;
+padding: 12px;
+border-radius: 16px;
+max-width: 75%;
+margin-left: auto;
+margin-bottom: 10px;
+}
+
+.chat-input {
+display: flex;
+gap: 10px;
+padding: 15px;
+border-top: 1px solid var(--border);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.doctor-card{
+flex-direction:column;
+}
+
+.doctor-image{
+width:100%;
+height:220px;
+}
+
+.navbar-container{
+flex-direction:column;
+gap:10px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+}
+}
