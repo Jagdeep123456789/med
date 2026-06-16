@@ -19,9 +19,9 @@ const [precautionText, setPrecautionText] = useState("");
 
   const fetchMessages = async () => {
     try {
-      const res = await fetch(`${API_URL}/api/chat/${appointmentId}`
-      );
-
+      const res = await fetch(
+  `${API_URL}/api/chat/${appointmentId}`
+);
       const data = await res.json();
 
       setMessages(data);
