@@ -19,7 +19,7 @@ const [precautionText, setPrecautionText] = useState("");
   const fetchMessages = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/chat/${appointmentId}`
+        `${import.meta.env.VITE_API_URL}/api/chat/${appointmentId}`
       );
 
       const data = await res.json();
