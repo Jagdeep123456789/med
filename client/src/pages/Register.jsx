@@ -26,7 +26,7 @@ export default function Register() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch("https://med-qujl.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -37,7 +37,7 @@ export default function Register() {
       if (!res.ok) throw new Error(data.message);
 
       // send OTP after register
-      await fetch("http://localhost:5000/api/auth/send-otp", {
+      await fetch("https://med-qujl.onrender.com/api/auth/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -58,7 +58,7 @@ export default function Register() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://localhost:5000/api/auth/verify-otp", {
+      const res = await fetch("https://med-qujl.onrender.com/api/auth/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, otp }),
@@ -83,7 +83,7 @@ export default function Register() {
   /* ---------------- RESEND OTP ---------------- */
   const handleResend = async () => {
     try {
-      await fetch("http://localhost:5000/api/auth/send-otp", {
+      await fetch("https://med-qujl.onrender.com/api/auth/send-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

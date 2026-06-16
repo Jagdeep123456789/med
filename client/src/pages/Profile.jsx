@@ -30,7 +30,7 @@ function Profile() {
       
       
       const res = await fetch(
-        `http://localhost:3000/api/appointments/all?email=${email}`
+        `https://med-qujl.onrender.com/api/appointments/all?email=${email}`
       );
 
       const data = await res.json();
@@ -50,7 +50,7 @@ function Profile() {
       return;
 
     const res = await fetch(
-      `http://localhost:3000/api/appointments/delete/${id}`,
+      `https://med-qujl.onrender.com/api/appointments/delete/${id}`,
       { method: "DELETE" }
     );
 
@@ -81,7 +81,7 @@ function Profile() {
     e.preventDefault();
 
     const res = await fetch(
-      `http://localhost:3000/api/appointments/update/${editing}`,
+      `https://med-qujl.onrender.com/api/appointments/update/${editing}`,
       {
         method: "PUT",
         headers: { "Content-Type": "application/json" },

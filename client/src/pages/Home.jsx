@@ -26,14 +26,14 @@ export default function Home() {
 
         // appointments
         const res = await fetch(
-          `http://localhost:5000/api/appointments?userId=${user._id}`
+          `https://med-qujl.onrender.com/api/appointments?userId=${user._id}`
         );
         const data = await res.json();
         setAppointments(data);
 
         // chat messages (for prescriptions)
         const msgRes = await fetch(
-          `http://localhost:5000/api/chat`
+          `https://med-qujl.onrender.com/api/chat`
         );
         const msgData = await msgRes.json();
 

@@ -24,7 +24,7 @@ if (!user?.email) return;
     setLoading(true);
 
     const res = await fetch(
-      `http://localhost:5000/api/prescriptions`
+      `https://med-qujl.onrender.com/api/prescriptions`
     );
 
     const data = await res.json();

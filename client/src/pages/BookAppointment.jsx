@@ -21,7 +21,7 @@ export default function BookAppointment() {
 
       console.log("Doctor ID:", doctorId);
 
-      const res = await fetch(`${API}/api/doctors/${doctorId}`);
+      const res = await fetch(`https://med-qujl.onrender.com/api/doctors/${doctorId}`);
 
       const text = await res.text(); // debug step
 
@@ -79,7 +79,7 @@ export default function BookAppointment() {
     );
 
     const res = await fetch(
-      `${API}/api/appointments`,
+      `https://med-qujl.onrender.com/api/appointments`,
       {
         method: "POST",
         headers: {

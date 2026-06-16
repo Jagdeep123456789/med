@@ -14,7 +14,7 @@ export default function DoctorPortal() {
   const fetchAppointments = async () => {
     try {
       const res = await fetch(
-        "${API_URL}/api/appointments"
+        "https://med-qujl.onrender.com/api/appointments"
       );
 
       const data = await res.json();
@@ -30,7 +30,7 @@ export default function DoctorPortal() {
   const markCompleted = async (id) => {
     try {
       await fetch(
-        `${API_URL}/api/appointments/${id}`,
+        `https://med-qujl.onrender.com/api/appointments/${id}`,
         {
           method: "PATCH",
           headers: {
@@ -50,7 +50,7 @@ export default function DoctorPortal() {
     console.log("Completing:", id);
 
     const res = await fetch(
-      `${API_URL}/api/appointments/${id}`,
+      `https://med-qujl.onrender.com/api/appointments/${id}`,
       {
         method: "PATCH",
         headers: {

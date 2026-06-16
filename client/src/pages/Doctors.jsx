@@ -18,7 +18,7 @@ export default function Doctors() {
       try {
         setLoading(true);
 
-        const res = await fetch("${API_URL}/api/doctors");
+        const res = await fetch("https://med-qujl.onrender.com/api/doctors");
         const data = await res.json();
 const list = Array.isArray(data) ? data : data.doctors || [];
         setDoctors(data);
