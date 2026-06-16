@@ -54,7 +54,9 @@ io.on("connection", (socket) => {
     console.log("❌ User Disconnected");
   });
 });
-
+app.get("/", (req, res) => {
+  res.send("Appointment Booking API is running");
+});
 // MongoDB
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
