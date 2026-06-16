@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { format } from "date-fns";
+import { API_URL } from "../config";
 
 export default function Chat() {
   const { appointmentId } = useParams();
@@ -19,7 +20,7 @@ const [precautionText, setPrecautionText] = useState("");
   const fetchMessages = async () => {
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/chat/${appointmentId}`
+        `${API_URL}/api/chat/${appointmentId}`
       );
 
       const data = await res.json();
@@ -32,7 +33,7 @@ const [precautionText, setPrecautionText] = useState("");
  const sendPrecaution = async () => {
   try {
     const res = await fetch(
-      "http://localhost:5000/api/prescriptions",
+      '${API_URL}/api/prescriptions',
       {
         method: "POST",
         headers: {
@@ -81,7 +82,7 @@ const [precautionText, setPrecautionText] = useState("");
 
     try {
       await fetch(
-        "http://localhost:5000/api/chat",
+        '${API_URL}/api/chat',
         {
           method: "POST",
           headers: {

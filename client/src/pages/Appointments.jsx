@@ -14,7 +14,7 @@ const statusColors = {
   completed: "#dcfce7",
   cancelled: "#fee2e2",
 };
-
+import { API_URL } from "../config";
 export default function Appointments() {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -35,7 +35,7 @@ export default function Appointments() {
       }
 
       const res = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/appointments`
+        `${API_URL}/api/appointments`
       );
 
       const data = await res.json();

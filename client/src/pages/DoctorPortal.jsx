@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import { API_URL } from "../config";
 export default function DoctorPortal() {
   const [appointments, setAppointments] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ export default function DoctorPortal() {
   const fetchAppointments = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/appointments"
+        "${API_URL}/api/appointments"
       );
 
       const data = await res.json();
@@ -30,7 +30,7 @@ export default function DoctorPortal() {
   const markCompleted = async (id) => {
     try {
       await fetch(
-        `http://localhost:5000/api/appointments/${id}`,
+        `${API_URL}/api/appointments/${id}`,
         {
           method: "PATCH",
           headers: {
@@ -50,7 +50,7 @@ export default function DoctorPortal() {
     console.log("Completing:", id);
 
     const res = await fetch(
-      `http://localhost:5000/api/appointments/${id}`,
+      `${API_URL}/api/appointments/${id}`,
       {
         method: "PATCH",
         headers: {

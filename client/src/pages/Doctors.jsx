@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { API_URL } from "../config";
 
 import DoctorCard from "../components/DoctorCard";
 import SpecialtyFilter from "../components/SpecialtyFilter";
@@ -17,7 +18,7 @@ export default function Doctors() {
       try {
         setLoading(true);
 
-        const res = await fetch("http://localhost:5000/api/doctors");
+        const res = await fetch("${API_URL}/api/doctors");
         const data = await res.json();
 const list = Array.isArray(data) ? data : data.doctors || [];
         setDoctors(data);
